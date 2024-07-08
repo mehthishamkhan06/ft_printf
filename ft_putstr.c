@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsignint.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/30 15:00:19 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/06/30 15:18:20 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/06/30 15:00:05 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/06/30 16:49:27 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_unsignint(unsigned int n)
+int	ft_putstr(char *str)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	if (n >= 10)
-		length += ft_unsignint(n / 10);
-	length += ft_putchar((n % 10) + 48);
-	return (length);
+	i = 0;
+	if (str == NULL)
+		str = "(null)";
+	while (str[i])
+		i++;
+	return (write(1, str, i));
 }
