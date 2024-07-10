@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+         #
+#    By: mohkhan <mohkhan@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/30 14:57:55 by mohkhan           #+#    #+#              #
-#    Updated: 2024/06/30 15:10:13 by mohkhan          ###   ########.fr        #
+#    Created: 2024/07/10 14:08:30 by mohkhan           #+#    #+#              #
+#    Updated: 2024/07/10 14:08:34 by mohkhan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/30 15:14:46 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/06/30 16:13:35 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/10 14:09:26 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/10 15:47:07 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
+		{
 			len += ft_checkformat(str[++i], lst);
+			if (len == -1)
+				return (-1);
+		}
 		else
 			len += ft_putchar(str[i]);
 		i++;
@@ -57,8 +61,8 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-int main()
-{
-//     ft_printf("\001\002\007\v\010\f\r\n");
-    printf("\n%d", printf("\001\002\007\v\010\f\r\n"));
-}
+// int	main(void)
+// {
+// 	ft_printf("hello\n");
+// 	printf("\n%d %s", "66" );
+// }
