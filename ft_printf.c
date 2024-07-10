@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:09:26 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 15:47:07 by mohkhan          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -24,13 +13,13 @@ int	ft_checkformat(char c, va_list lst)
 	else if (c == 'p')
 		len += ft_hexaddr(va_arg(lst, unsigned long));
 	else if (c == 'd' || c == 'i')
-		len += ft_rnputnbr(va_arg(lst, int));
+		len += ft_intdec(va_arg(lst, int));
 	else if (c == 'u')
-		len += ft_unsignint(va_arg(lst, unsigned int));
+		len += ft_unint(va_arg(lst, unsigned int));
 	else if (c == 'x')
-		len += ft_hexsm(va_arg(lst, unsigned int));
+		len += ft_hexalow(va_arg(lst, unsigned int));
 	else if (c == 'X')
-		len += ft_hexcap(va_arg(lst, unsigned int));
+		len += ft_hexacap(va_arg(lst, unsigned int));
 	else if (c == '%')
 		len += ft_putchar(c);
 	return (len);
@@ -53,16 +42,15 @@ int	ft_printf(const char *str, ...)
 			if (len == -1)
 				return (-1);
 		}
+		if (len == -1)
+			return (-1);
 		else
 			len += ft_putchar(str[i]);
-		i++;
+            if (len == -1)
+                return (-1);
+        i++;
 	}
 	va_end(lst);
 	return (len);
 }
 
-// int	main(void)
-// {
-// 	ft_printf("hello\n");
-// 	printf("\n%d %s", "66" );
-// }
